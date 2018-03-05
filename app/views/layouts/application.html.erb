@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TODO</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <head>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+  </head>
+  <body>
+    <div class="container">
+      <div row>
+        <div class="col-xs-6">
+          <%= yield %>
+          <%= javascript_include_tag 'application' %>
+          <%= javascript_pack_tag 'application' %>
+          <%= cloudinary_js_config %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

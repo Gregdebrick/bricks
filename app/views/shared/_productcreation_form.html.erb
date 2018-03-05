@@ -1,0 +1,11 @@
+<%= simple_form_for @product do |f| %>
+  <%= @product.errors.full_messages %>
+  <%= f.input :category, collection: ["Femme", "Homme", "Enfant"], prompt: "-- Choisissez la catégorie --" %>
+  <%= f.input :name, placeholder: "Nom", label: "Nom du produit" %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.input :brand, placeholder: "Marque", label: "Marque du produit" %>
+  <%= f.input :tagline, as: :text, placeholder: "Des", label: "Description du produit" %>
+  <%= f.input :size, placeholder: "Size", label: "Taille du produit" %>
+  <%= f.input :sku, placeholder: "Ref", label: "Ref. du produit" %>
+  <%= f.button :submit, "Ajouter", class: "btn btn-primary" %>
+<% end %>

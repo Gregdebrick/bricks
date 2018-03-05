@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2" style="padding: 15px; border: 1px solid #ccc; margin-top: 20px;">
+    <h1>Fiche produit</h1>
+    <% if @product.photo? %>
+      <%= cl_image_tag @product.photo.path, width: 400 %>
+    <% end %>
+    <h2><%= @product.name %></h2>
+    <h3><%= @product.category %></h3>
+    <h3><%= @product.brand %></h3>
+    <p><%= @product.sku %></p>
+    <p><%= @product.size %></p>
+    <% if @product.user %>
+    <p><%= @product.user.email %></p>
+    <% end %>
+  </div>
+</div>
+<%= link_to "Catalogue", products_path, class: "btn btn-xs btn-success" %>

@@ -1,0 +1,26 @@
+<h1>Catalogue de produits</h1>
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to "Tous les produits", products_path, class: "label  label-default" %>
+    <%= link_to "Catégorie Femme", products_path(category: "Femme"), class: "label  label-default" %>
+    <%= link_to "Catégorie Homme", products_path(category: "Homme"), class: "label  label-default" %>
+    <%= link_to "Catégorie Enfant", products_path(category: "Enfant"), class: "label  label-default" %>
+  </div>
+</div>
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-xs-3">
+    <div style="border: 1px solid #ccc; padding: 15px; background-color: white;">
+      <h2><%= product.name %></h2>
+      <h3 class="label label-default"><%= product.category %></h3>
+      <h3><%= product.brand %></h3>
+      <p><%= product.tagline %></p>
+      <p><%= product.size %></p>
+      <p><%= product.sku %></p>
+      <%= link_to "Voir", product_path(product), class: "btn btn-xs btn-success" %>
+      <%= link_to "Editer", edit_product_path(product), class: "btn btn-xs btn-warning" %>
+      <%= link_to "Supprimer", product_path(product), method: :delete, class: "btn btn-xs btn-danger" %>
+    </div>
+  </div>
+  <% end %>
+</div>
